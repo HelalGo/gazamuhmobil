@@ -1,5 +1,6 @@
 import { Pressable, Text, View, StyleSheet } from 'react-native';
 import { MotiView } from 'moti';
+import { Image } from 'expo-image';
 import * as Haptics from 'expo-haptics';
 import { colors } from '../theme';
 import { tl } from '../data';
@@ -14,7 +15,11 @@ export function ProductCard({ product, index }: { product: Product; index: numbe
       transition={{ type: 'timing', duration: 450, delay: index * 90 }}
       style={s.card}
     >
-      <View style={s.img} />
+      {product.imageUrl ? (
+        <Image source={product.imageUrl} style={[s.img, s.photo]} contentFit="contain" transition={200} accessibilityLabel={product.name} />
+      ) : (
+        <View style={s.img} />
+      )}
       <Text style={s.brand}>{product.brand}</Text>
       <Text style={s.name} numberOfLines={2}>{product.name}</Text>
       <Text style={s.btu}>{product.category}</Text>
@@ -41,6 +46,7 @@ export function ProductCard({ product, index }: { product: Product; index: numbe
 const s = StyleSheet.create({
   card: { backgroundColor: colors.surface, borderColor: colors.border, borderWidth: 1, borderRadius: 20, padding: 16, marginBottom: 14 },
   img: { height: 120, borderRadius: 14, backgroundColor: colors.surfaceAlt, marginBottom: 12 },
+  photo: { height: 180, backgroundColor: '#FFFFFF' },
   brand: { color: colors.muted, fontSize: 12 },
   name: { color: colors.text, fontSize: 17, fontWeight: '700', marginTop: 2 },
   btu: { color: colors.primary, fontSize: 13, marginTop: 2 },

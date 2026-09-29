@@ -5,6 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors } from '../../src/theme';
 import { useProducts } from '../../src/useProducts';
 import { ProductCard } from '../../src/components/ProductCard';
+import { SocialLinks } from '../../src/components/SocialLinks';
 
 export default function Home() {
   const { top } = useSafeAreaInsets();
@@ -24,6 +25,7 @@ export default function Home() {
         <MotiText from={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 300 }} style={s.sub}>
           Klima & iklimlendirme çözümleri
         </MotiText>
+        <SocialLinks />
       </LinearGradient>
       <Text style={s.h2}>Öne Çıkanlar</Text>
       {products.slice(0, 2).map((p, i) => (

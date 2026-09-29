@@ -8,6 +8,7 @@ export type Product = {
   price: number;
   oldPrice: number | null;
   inStock: boolean;
+  imageUrl?: string | null;
 };
 type CartItem = Product & { qty: number };
 
