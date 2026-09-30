@@ -1,7 +1,7 @@
 import { Linking, Pressable, StyleSheet, View } from 'react-native';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import * as Haptics from 'expo-haptics';
-import { colors } from '../theme';
+import { colors, radius } from '../theme';
 
 const socials = [
   { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/gazabilisim' },
@@ -29,5 +29,5 @@ export function SocialLinks() {
 
 const s = StyleSheet.create({
   row: { flexDirection: 'row', gap: 10, marginTop: 16 },
-  btn: { width: 42, height: 42, borderRadius: 21, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border },
+  btn: { width: 42, height: 42, borderRadius: radius, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.border },
 });

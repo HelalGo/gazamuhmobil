@@ -10,5 +10,8 @@ export const colors = {
   whatsapp: '#25D366',
 };
 
+// Uygulamadaki tüm butonların köşe yuvarlaklığı (en fazla 4px)
+export const radius = 4;
+
 export const WHATSAPP_NUMBER = '905331944952';
 export const WHATSAPP_MESSAGE = 'Merhaba, bilgi almak istiyorum.';
