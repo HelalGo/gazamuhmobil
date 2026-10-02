@@ -14,7 +14,7 @@ const TOPICS = ['Genel bilgi', 'Fiyat / teklif', 'Kurulum / montaj', 'Servis / b
 
 type Info = {
   contact: { phone: string; email: string; address: string };
-  company: { title: string; taxOffice: string; taxNo: string; mersis: string; tradeRegistryNo: string; registry: string };
+  company: { title: string; taxOffice: string; taxNo: string; mersis: string; tradeRegistryNo: string; registry: string; kep?: string };
   igdas: { title: string; no: string };
 };
 
@@ -123,6 +123,7 @@ export default function Contact() {
               <InfoRow k="Ticaret unvanı" v={info.company.title} />
               <InfoRow k="Vergi dairesi / No" v={`${info.company.taxOffice} / ${info.company.taxNo}`} />
               <InfoRow k="MERSİS No" v={info.company.mersis} />
+              {info.company.kep ? <InfoRow k="KEP adresi" v={info.company.kep} /> : null}
               <InfoRow k="Ticaret sicil" v={`${info.company.registry} – ${info.company.tradeRegistryNo}`} />
             </View>
           </>
