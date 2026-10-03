@@ -6,7 +6,6 @@ import { colors, radius } from '../../src/theme';
 import { AppBar } from '../../src/components/AppBar';
 import { SocialLinks } from '../../src/components/SocialLinks';
 import { PHONE, call, whatsapp } from '../../src/links';
-import { resetIntro } from '../../src/onboarding';
 import { useCart } from '../../src/store/cart';
 import { useFavorites } from '../../src/store/favorites';
 import { useAuth } from '../../src/store/auth';
@@ -56,10 +55,6 @@ export default function Account() {
         { icon: 'shield-checkmark-outline', label: 'KVKK aydınlatma metni', onPress: () => page('kvkk-aydinlatma-metni') },
         { icon: 'lock-closed-outline', label: 'Gizlilik politikası', onPress: () => page('gizlilik-politikasi') },
         { icon: 'reader-outline', label: 'Mesafeli satış sözleşmesi', onPress: () => page('mesafeli-satis-sozlesmesi') },
-        {
-          icon: 'play-circle-outline', label: 'Uygulama tanıtımını yeniden göster',
-          onPress: () => resetIntro().then(() => Alert.alert('Tanıtım', 'Uygulamayı bir sonraki açışınızda tanıtım yeniden gösterilecek.')),
-        },
       ],
     },
   ];

@@ -27,6 +27,3 @@ export async function loadIntro(): Promise<IntroSlide[]> {
 }
 
 export const markIntroSeen = () => AsyncStorage.setItem(SEEN_KEY, '1').catch(() => {});
-
-// Hesabım → "Uygulama tanıtımını yeniden göster": bir sonraki açılışta tanıtım tekrar çıkar
-export const resetIntro = () => AsyncStorage.removeItem(SEEN_KEY).catch(() => {});
